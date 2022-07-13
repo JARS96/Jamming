@@ -1,5 +1,5 @@
 
-const clientId = '7e6ba53ca9364abfa0c3e5d5cfb0e627';
+const clientId = ' 7e6ba53ca9364abfa0c3e5d5cfb0e627';
 const redirectUri = 'http//localhost:3000/';
 let accessToken;
 
@@ -27,7 +27,8 @@ const Spotify = {
 
     search(term) {
         const accessToken = Spotify.getAccesToken();
-        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`,{
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, 
+        {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
@@ -43,7 +44,7 @@ const Spotify = {
                 artist: track.artists[0].name,
                 album: track.album.name,
                 uri: track.uri
-            }))
+            }));
         })
     },
 
